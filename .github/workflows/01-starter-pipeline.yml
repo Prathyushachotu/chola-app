@@ -11,3 +11,6 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello From Pipeline"
+
+      - name: Execute Commonds
+        run: dir
