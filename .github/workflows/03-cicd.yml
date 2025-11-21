@@ -6,8 +6,8 @@ on:
     branches: [main]
 jobs:
   build:
-    # runs-on: windows-latest
-    runs-on: self-hosted
+    runs-on: windows-latest
+    # runs-on: self-hosted
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -30,5 +30,14 @@ jobs:
         with:
           name: chola-app
           path: chola-app.zip
+  deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Download Artifact
+          uses: actions/download-artifact@v4
+          with:
+            name: chola-app
+            path: ./artifact
+        
 
           
